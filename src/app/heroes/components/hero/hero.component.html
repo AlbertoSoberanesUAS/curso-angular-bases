@@ -1,0 +1,35 @@
+<h1>{{ capitalizedName }} Hero</h1>
+<hr>
+
+<dl class="mt-3">
+  <dt>Nombre</dt>
+  <dd>{{ name }}</dd>
+
+  <dt>Edad</dt>
+  <dd>{{ age }}</dd>
+
+  <dt>Alterego</dt>
+  <dd>{{ alterego }}</dd>
+
+  <dt>Habilidades</dt>
+  <dd>{{ superpower }}</dd>
+
+  <dt>Descripción</dt>
+  <dd>{{ getHeroDescription() }}</dd>
+</dl>
+
+<button
+  *ngIf="name !== 'Spiderman'"
+  (click)="changeName()"
+  class="btn btn-primary me-3"
+>Cambiar nombre</button>
+<button
+  *ngIf="age !== 16"
+  (click)="changeAge()"
+  class="btn btn-primary me-3"
+>Cambiar edad</button>
+<button
+  (click)="reset()"
+  class="btn btn-primary"
+>Reset</button>
+

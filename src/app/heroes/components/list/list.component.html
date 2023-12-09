@@ -1,0 +1,30 @@
+<h3 class="mt-3">Lista de Héroes</h3>
+
+<!-- <ul class="mt-3 list-group">
+  <li class="list-group-item">Ironman</li>
+  <li class="list-group-item">Spiderman</li>
+  <li class="list-group-item">Hulk</li>
+  <li class="list-group-item">Thor</li>
+  <li class="list-group-item">Captain America</li>
+</ul> -->
+
+<button
+  (click)="deleteLastHeroe()"
+  *ngIf="heroes.length > 0"
+  class="btn btn-danger mt-3"
+>Borrar último héroe</button>
+
+<div *ngIf="deletedHero; else notDeletedHeroes">
+  <h3 class="mt-3">Héroe borrado: <small>{{ deletedHero }}</small></h3>
+</div>
+
+<ng-template #notDeletedHeroes>
+  <h3 class="mt-3">No hay héroes borrados</h3>
+</ng-template>
+
+<ul class="list-group mt-3">
+  <li *ngFor="let hero of heroes"
+    class="list-group-item"
+  >{{ hero }}
+  </li>
+</ul>
